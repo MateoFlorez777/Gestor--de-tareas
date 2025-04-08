@@ -41,6 +41,9 @@ const TaskForm = ({ tasks, setTasks, editingTask, setEditingTask }) => {
           <input
             id="title"
             type="text"
+            autoFocus
+            required
+            pattern="[a-zA-Z0-9\s]+"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="¿Qué necesitas hacer?"

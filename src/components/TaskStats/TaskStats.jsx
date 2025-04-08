@@ -4,9 +4,6 @@ const TaskStats = ({ tasks }) => {
   const totalTasks = tasks.length;
   const completedTasks = tasks.filter(task => task.completed).length;
   const pendingTasks = totalTasks - completedTasks;
-  const completionPercentage = totalTasks > 0 
-    ? Math.round((completedTasks / totalTasks) * 100) 
-    : 0;
 
   return (
     <div className="bg-white rounded-lg shadow-md p-6 border border-gray-100">
@@ -29,15 +26,6 @@ const TaskStats = ({ tasks }) => {
         </div>
       </div>
       
-      <div className="w-full bg-gray-200 rounded-full h-4">
-        <div 
-          className="bg-indigo-600 h-4 rounded-full transition-all duration-500 ease-in-out" 
-          style={{ width: `${completionPercentage}%` }}
-        ></div>
-      </div>
-      <p className="text-center text-sm mt-2 text-gray-600 font-medium">
-        {completionPercentage}% completado
-      </p>
     </div>
   );
 };
